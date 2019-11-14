@@ -1,0 +1,23 @@
+# --- Generated Automatically ---
+config AOS_APP_EXAMPLE
+    bool "Builtin Examples"
+
+if AOS_APP_EXAMPLE
+choice
+    prompt "Select example"
+
+source "app/example/blink/Config.in"
+if AOS_APP_BLINK
+    config AOS_BUILD_APP
+        default "blink"
+endif
+
+source "app/example/linkkitapp/Config.in"
+if AOS_APP_LINKKITAPP
+    config AOS_BUILD_APP
+        default "linkkitapp"
+endif
+
+endchoice
+endif
+# --- End ---
