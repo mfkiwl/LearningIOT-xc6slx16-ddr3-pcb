@@ -1,4 +1,4 @@
-NAME := board_stm32f401re-nucleo
+NAME := board_stm32f401cc-lcd
 
 $(NAME)_MBINS_TYPE := kernel
 $(NAME)_VERSION    := 1.0.1
@@ -33,7 +33,7 @@ GLOBAL_INCLUDES += .    \
                    aos/ \
                    Inc/
 
-GLOBAL_CFLAGS += -DSTM32F401xC -DSRAM1_SIZE_MAX=0x18000 -DCENTRALIZE_MAPPING
+GLOBAL_CFLAGS += -DSTM32F401xC -DSRAM1_SIZE_MAX=0x10000 -DCENTRALIZE_MAPPING
 
 GLOBAL_LDFLAGS += -T board/stm32f401cc-lcd/STM32F401CCUx_FLASH.ld
 
