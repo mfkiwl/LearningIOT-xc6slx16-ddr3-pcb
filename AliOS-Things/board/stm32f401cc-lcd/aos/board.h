@@ -33,5 +33,12 @@ typedef enum{
     PORT_SPI_INVALID =255,
 }PORT_SPI_TYPE;
 
+typedef enum{
+    PORT_TIMER_CANOPEN,
+    PORT_TIMER_PWM,
+    PORT_TIMER_SIZE,
+    PORT_TIMER_INVALID = 255,
+}PORT_TIMER_TYPE;
+
 #endif /*__BOARD__H_*/
 

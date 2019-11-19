@@ -41,6 +41,10 @@ UART_MAPPING UART_MAPPING_TABLE[] =
       { PORT_UART_AT,      USART2,  { UART_OVERSAMPLING_16, 1024 } }
 };
 
+SPI_MAPPING SPI_MAPPING_TABLE[] = 
+{
+      { 0, SPI1, {}}
+};
 
 const gpio_mapping_t gpio_mapping_table[TOTAL_GPIO_NUM] =
 {
@@ -138,47 +142,4 @@ GETCHAR_PROTOTYPE
   } else {
       return -1;
   }
-}
-
-extern int32_t hal_spi_init(spi_dev_t *spi);
-int32_t hal_spi_init(spi_dev_t *spi) {
-    return -1;
-}
-
-extern int32_t hal_spi_recv(spi_dev_t *spi, uint8_t *data, uint16_t size, uint32_t timeout);
-int32_t hal_spi_recv(spi_dev_t *spi, uint8_t *data, uint16_t size, uint32_t timeout) {
-    return -1;
-}
-extern int32_t hal_spi_send(spi_dev_t *spi, const uint8_t *data, uint16_t size, uint32_t timeout);
-int32_t hal_spi_send(spi_dev_t *spi, const uint8_t *data, uint16_t size, uint32_t timeout) {
-    return -1;
-}
-
-extern int32_t hal_spi_finalize(spi_dev_t *spi);
-int32_t hal_spi_finalize(spi_dev_t *spi) {
-    return -1;
-}
-
-extern int32_t hal_i2c_init(i2c_dev_t *i2c);
-int32_t hal_i2c_init(i2c_dev_t *i2c) {
-    return -1;
-}
-
-extern int32_t hal_i2c_master_send(i2c_dev_t *i2c, uint16_t dev_addr, const uint8_t *data,
-                            uint16_t size, uint32_t timeout);
-int32_t hal_i2c_master_send(i2c_dev_t *i2c, uint16_t dev_addr, const uint8_t *data,
-                            uint16_t size, uint32_t timeout) {
-    return -1;
-}
-
-extern int32_t hal_i2c_master_recv(i2c_dev_t *i2c, uint16_t dev_addr, uint8_t *data,
-                            uint16_t size, uint32_t timeout);
-int32_t hal_i2c_master_recv(i2c_dev_t *i2c, uint16_t dev_addr, uint8_t *data,
-                            uint16_t size, uint32_t timeout) {
-    return -1;
-}
-
-extern int32_t hal_i2c_finalize(i2c_dev_t *i2c);
-int32_t hal_i2c_finalize(i2c_dev_t *i2c) {
-    return -1;
 }
