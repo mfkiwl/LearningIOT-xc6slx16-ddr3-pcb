@@ -3,21 +3,12 @@ menu "BSP         Configuration"
 choice
     prompt "Select board"
 
-source "board/stm32f401re-nucleo/Config.in"
-if AOS_BOARD_STM32F401RE_NUCLEO
-    config AOS_BUILD_BOARD
-        default "stm32f401re-nucleo"
-
-    source "platform/mcu/stm32f4xx_cube/Config.in"
-    source "platform/arch/arm/armv7m/Config.in"
-endif
-
 source "board/stm32f401cc-lcd/Config.in"
 if AOS_BOARD_STM32F401CC_LCD
     config AOS_BUILD_BOARD
         default "stm32f401cc-lcd"
 
-    source "platform/mcu/stm32f4xx_cube/Config.in"
+    source "platform/mcu/stm32f401cx/Config.in"
     source "platform/arch/arm/armv7m/Config.in"
 endif
 

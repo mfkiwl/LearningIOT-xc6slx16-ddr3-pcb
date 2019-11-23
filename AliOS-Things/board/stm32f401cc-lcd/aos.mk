@@ -5,9 +5,9 @@ $(NAME)_VERSION    := 1.0.1
 $(NAME)_SUMMARY    := configuration for board stm32f401cc-lcd
 MODULE             := 1062
 HOST_ARCH          := Cortex-M4
-HOST_MCU_FAMILY    := mcu_stm32f4xx_cube
+HOST_MCU_FAMILY    := mcu_stm32f401cx
 SUPPORT_MBINS      := no
-HOST_MCU_NAME      := STM32F401CCU
+HOST_MCU_NAME      := STM32F401CX
 ENABLE_VFP         := 1
 
 $(NAME)_COMPONENTS += $(HOST_MCU_FAMILY) kernel_init
