@@ -29,6 +29,10 @@
 // add for st nucleo board
 #define GPIO_LED_NUCLEO 5
 
+#define LED_R 22
+#define LED_G 23
+#define LED_B 45
+
 static void app_trigger_low_action(void *arg);
 static void app_trigger_high_action(void *arg);
 
@@ -91,11 +95,18 @@ int application_start(int argc, char *argv[])
 #else
     //add for st nucleo board , if debug on developerkit board, please comment it
     /* gpio port config */
+    led.port = LED_G;
+    /* set as output mode */
+    led.config = OUTPUT_PUSH_PULL;
+    /* configure GPIO with the given settings */
+    hal_gpio_init(&led);
+
     int hz = 0;
     printf("STM32F401CCUX_LCD Board Start \r\n");
     while (1)
     {
         /* Insert delay 1000 ms */
+        hal_gpio_output_toggle(&led);
         aos_msleep(1000);
         hz = aos_get_hz();
         printf("Running in %d Hz \r\n", hz);
