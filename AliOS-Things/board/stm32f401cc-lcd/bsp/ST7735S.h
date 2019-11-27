@@ -21,23 +21,23 @@
 
 //-----------------OLED端口定义----------------
 
-#define OLED_SCLK_Clr() GPIO_ResetBits(GPIOG, GPIO_Pin_12) //SCL
-#define OLED_SCLK_Set() GPIO_SetBits(GPIOG, GPIO_Pin_12)
+#define OLED_SCLK_Clr() GPIO_ResetBits(GPIOA, GPIO_Pin_5) //SCL
+#define OLED_SCLK_Set() GPIO_SetBits(GPIOA, GPIO_Pin_5)
 
-#define OLED_SDIN_Clr() GPIO_ResetBits(GPIOD, GPIO_Pin_5) //DIN
-#define OLED_SDIN_Set() GPIO_SetBits(GPIOD, GPIO_Pin_5)
+#define OLED_SDIN_Clr() GPIO_ResetBits(GPIOA, GPIO_Pin_7) //DIN
+#define OLED_SDIN_Set() GPIO_SetBits(GPIOA, GPIO_Pin_7)
 
-#define OLED_RES_Clr() GPIO_ResetBits(GPIOD, GPIO_Pin_4) //RES
-#define OLED_RES_Set() GPIO_SetBits(GPIOD, GPIO_Pin_4)
+#define OLED_RES_Clr() GPIO_ResetBits(GPIOB, GPIO_Pin_2) //RES
+#define OLED_RES_Set() GPIO_SetBits(GPIOB, GPIO_Pin_2)
 
-#define OLED_DC_Clr() GPIO_ResetBits(GPIOD, GPIO_Pin_15) //DC
-#define OLED_DC_Set() GPIO_SetBits(GPIOD, GPIO_Pin_15)
+#define OLED_DC_Clr() GPIO_ResetBits(GPIOA, GPIO_Pin_0) //DC
+#define OLED_DC_Set() GPIO_SetBits(GPIOA, GPIO_Pin_0)
 
-#define OLED_CS_Clr() GPIO_ResetBits(GPIOD, GPIO_Pin_1) //CS
-#define OLED_CS_Set() GPIO_SetBits(GPIOD, GPIO_Pin_1)
+#define OLED_CS_Clr() GPIO_ResetBits(GPIOB, GPIO_Pin_1) //CS
+#define OLED_CS_Set() GPIO_SetBits(GPIOB, GPIO_Pin_1)
 
-#define OLED_BLK_Clr() GPIO_ResetBits(GPIOE, GPIO_Pin_8) //BLK
-#define OLED_BLK_Set() GPIO_SetBits(GPIOE, GPIO_Pin_8)
+#define OLED_BLK_Clr() GPIO_ResetBits(GPIOB, GPIO_Pin_0) //BLK
+#define OLED_BLK_Set() GPIO_SetBits(GPIOB, GPIO_Pin_0)
 
 #define OLED_CMD 0  //写命令
 #define OLED_DATA 1 //写数据

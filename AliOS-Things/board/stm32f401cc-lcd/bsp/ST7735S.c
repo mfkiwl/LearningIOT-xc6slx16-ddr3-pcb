@@ -1,5 +1,4 @@
 #include "oled.h"
-#include "oledfont.h"
 #include "delay.h"
 #include "bmp.h"
 u16 BACK_COLOR; //背景色
@@ -117,37 +116,6 @@ void LCD_Address_Set(u16 x1, u16 y1, u16 x2, u16 y2)
 ******************************************************************************/
 void Lcd_Init(void)
 {
-	GPIO_InitTypeDef GPIO_InitStructure;
-
-	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA | RCC_AHB1Periph_GPIOB | RCC_AHB1Periph_GPIOC | RCC_AHB1Periph_GPIOD | RCC_AHB1Periph_GPIOE | RCC_AHB1Periph_GPIOG, ENABLE); //使能PORTA~E,PORTG时钟
-
-	//GPIO初始化设置
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1 | GPIO_Pin_4 | GPIO_Pin_5 | GPIO_Pin_15;
-	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;	  //普通输出模式
-	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;	 //推挽输出
-	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz; //100MHz
-	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;	   //上拉
-	GPIO_Init(GPIOD, &GPIO_InitStructure);			   //初始化
-	GPIO_SetBits(GPIOD, GPIO_Pin_1 | GPIO_Pin_4 | GPIO_Pin_5 | GPIO_Pin_15);
-
-	//GPIO初始化设置
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_8 | GPIO_Pin_10;
-	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;	  //普通输出模式
-	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;	 //推挽输出
-	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz; //100MHz
-	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;	   //上拉
-	GPIO_Init(GPIOE, &GPIO_InitStructure);			   //初始化
-	GPIO_SetBits(GPIOE, GPIO_Pin_8 | GPIO_Pin_10);
-
-	//GPIO初始化设置
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_12;
-	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;	  //普通输出模式
-	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;	 //推挽输出
-	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz; //100MHz
-	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;	   //上拉
-	GPIO_Init(GPIOG, &GPIO_InitStructure);			   //初始化
-	GPIO_SetBits(GPIOG, GPIO_Pin_12);
-
 	OLED_RES_Clr();
 	delay_ms(200);
 	OLED_RES_Set();
