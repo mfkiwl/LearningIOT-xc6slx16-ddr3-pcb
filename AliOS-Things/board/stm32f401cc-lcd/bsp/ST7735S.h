@@ -1,8 +1,8 @@
 #ifndef __OLED_H
 #define __OLED_H
 
-#include "sys.h"
 #include "stdlib.h"
+#include "hal_gpio_stm32f4.h"
 
 #define USE_HORIZONTAL 2 //设置横屏或者竖屏显示 0或1为竖屏 2或3为横屏
 
@@ -21,23 +21,23 @@
 
 //-----------------OLED端口定义----------------
 
-#define OLED_SCLK_Clr() GPIO_ResetBits(GPIOA, GPIO_Pin_5) //SCL
-#define OLED_SCLK_Set() GPIO_SetBits(GPIOA, GPIO_Pin_5)
+#define OLED_SCLK_Clr() HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_RESET) //SCL
+#define OLED_SCLK_Set() HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_SET) 
 
-#define OLED_SDIN_Clr() GPIO_ResetBits(GPIOA, GPIO_Pin_7) //DIN
-#define OLED_SDIN_Set() GPIO_SetBits(GPIOA, GPIO_Pin_7)
+#define OLED_SDIN_Clr() HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_RESET)  //DIN
+#define OLED_SDIN_Set() HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_SET) 
 
-#define OLED_RES_Clr() GPIO_ResetBits(GPIOB, GPIO_Pin_2) //RES
-#define OLED_RES_Set() GPIO_SetBits(GPIOB, GPIO_Pin_2)
+#define OLED_RES_Clr() HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_RESET)  //RES
+#define OLED_RES_Set() HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_SET) 
 
-#define OLED_DC_Clr() GPIO_ResetBits(GPIOA, GPIO_Pin_0) //DC
-#define OLED_DC_Set() GPIO_SetBits(GPIOA, GPIO_Pin_0)
+#define OLED_DC_Clr() HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_RESET)  //DC
+#define OLED_DC_Set() HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_SET) 
 
-#define OLED_CS_Clr() GPIO_ResetBits(GPIOB, GPIO_Pin_1) //CS
-#define OLED_CS_Set() GPIO_SetBits(GPIOB, GPIO_Pin_1)
+#define OLED_CS_Clr() HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_RESET)  //CS
+#define OLED_CS_Set() HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_SET) 
 
-#define OLED_BLK_Clr() GPIO_ResetBits(GPIOB, GPIO_Pin_0) //BLK
-#define OLED_BLK_Set() GPIO_SetBits(GPIOB, GPIO_Pin_0)
+#define OLED_BLK_Clr() HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_RESET)  //BLK
+#define OLED_BLK_Set() HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_SET) 
 
 #define OLED_CMD 0  //写命令
 #define OLED_DATA 1 //写数据
@@ -49,8 +49,8 @@ void LCD_WR_DATA8(u8 dat);
 void LCD_WR_DATA(u16 dat);
 void LCD_WR_REG(u8 dat);
 void LCD_Address_Set(u16 x1, u16 y1, u16 x2, u16 y2);
-void Lcd_Init(void);
-void LCD_Clear(u16 Color);
+extern void Lcd_Init(void);
+extern void LCD_Clear(u16 Color);
 void LCD_ShowChinese(u16 x, u16 y, u8 index, u8 size, u16 color);
 void LCD_DrawPoint(u16 x, u16 y, u16 color);
 void LCD_DrawPoint_big(u16 x, u16 y, u16 colory);
@@ -59,10 +59,10 @@ void LCD_DrawLine(u16 x1, u16 y1, u16 x2, u16 y2, u16 color);
 void LCD_DrawRectangle(u16 x1, u16 y1, u16 x2, u16 y2, u16 color);
 void Draw_Circle(u16 x0, u16 y0, u8 r, u16 color);
 void LCD_ShowChar(u16 x, u16 y, u8 num, u8 mode, u16 color);
-void LCD_ShowString(u16 x, u16 y, const u8 *p, u16 color);
+extern void LCD_ShowString(u16 x, u16 y, const u8 *p, u16 color);
 u32 mypow(u8 m, u8 n);
 void LCD_ShowNum(u16 x, u16 y, u16 num, u8 len, u16 color);
-void LCD_ShowNum1(u16 x, u16 y, float num, u8 len, u16 color);
+extern void LCD_ShowNum1(u16 x, u16 y, float num, u8 len, u16 color);
 void LCD_ShowPicture(u16 x1, u16 y1, u16 x2, u16 y2);
 
 //画笔颜色

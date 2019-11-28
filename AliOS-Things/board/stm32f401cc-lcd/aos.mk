@@ -13,6 +13,7 @@ ENABLE_VFP         := 1
 $(NAME)_COMPONENTS += $(HOST_MCU_FAMILY) kernel_init
 
 $(NAME)_SOURCES += aos/board.c \
+                   bsp/ST7735S.c \
                    aos/soc_init.c
 
 $(NAME)_SOURCES += Src/stm32f4xx_hal_msp.c \
@@ -31,7 +32,8 @@ $(NAME)_SOURCES    += startup_stm32f401xc.s
 
 GLOBAL_INCLUDES += .    \
                    aos/ \
-                   Inc/
+                   Inc/ \
+                   bsp/
 
 GLOBAL_CFLAGS += -DSTM32F401xC -DSRAM1_SIZE_MAX=0x10000 -DCENTRALIZE_MAPPING
 

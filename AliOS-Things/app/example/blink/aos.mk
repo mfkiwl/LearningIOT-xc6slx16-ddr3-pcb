@@ -10,3 +10,5 @@ $(NAME)_COMPONENTS += osal_aos
 GLOBAL_DEFINES += AOS_NO_WIFI
 
 $(NAME)_INCLUDES += ./
+				
+GLOBAL_INCLUDES += 	../../../board/stm32f401cc-lcd/bsp/

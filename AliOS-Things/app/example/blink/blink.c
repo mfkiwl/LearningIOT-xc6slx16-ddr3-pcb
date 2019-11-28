@@ -6,7 +6,7 @@
 #include "ulog/ulog.h"
 
 #include "aos/hal/gpio.h"
-
+#include "ST7735S.h"
 /**
  * Brief:
  * This test code shows how to configure gpio and how to use gpio interrupt.
@@ -101,15 +101,20 @@ int application_start(int argc, char *argv[])
     /* configure GPIO with the given settings */
     hal_gpio_init(&led);
 
-    int hz = 0;
+    aos_msleep(168);
+    Lcd_Init();
+    LCD_Clear(WHITE);
+    BACK_COLOR = WHITE;
+
+    int t = 0;
     printf("STM32F401CCUX_LCD Board Start \r\n");
     while (1)
     {
         /* Insert delay 1000 ms */
-        hal_gpio_output_toggle(&led);
+        hal_gpio_output_low(&led);
         aos_msleep(1000);
-        hz = aos_get_hz();
-        printf("Running in %d Hz \r\n", hz);
+        hal_gpio_output_high(&led);
+        t += 1;
     }
 #endif
     aos_loop_run();
