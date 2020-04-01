@@ -241,3 +241,19 @@ void LCD_Clear(u16 Color)
 		}
 	}
 }
+
+/******************************************************************************
+      函数说明：在指定区域填充颜色
+      入口数据：xsta,ysta   起始坐标
+                xend,yend   终止坐标
+      返回值：  无
+******************************************************************************/
+void LCD_Fill(u16 xsta,u16 ysta,u16 xend,u16 yend,u16 color)
+{          
+	u16 i,j; 
+	LCD_Address_Set(xsta,ysta,xend,yend);      //设置光标位置 
+	for(i=ysta;i<=yend;i++)
+	{													   	 	
+		for(j=xsta;j<=xend;j++)LCD_WR_DATA(color);//设置光标位置 	    
+	} 					  	    
+}

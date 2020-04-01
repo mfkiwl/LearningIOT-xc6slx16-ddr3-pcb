@@ -103,18 +103,23 @@ int application_start(int argc, char *argv[])
 
     aos_msleep(168);
     Lcd_Init();
-    LCD_Clear(WHITE);
-    BACK_COLOR = WHITE;
+    BACK_COLOR = BLACK;
 
     int t = 0;
     printf("STM32F401CCUX_LCD Board Start \r\n");
     while (1)
     {
         /* Insert delay 1000 ms */
-        hal_gpio_output_low(&led);
-        aos_msleep(1000);
-        hal_gpio_output_high(&led);
-        t += 1;
+        printf("WHITE \r\n");
+        LCD_Clear(WHITE);
+        printf("RED \r\n");
+        LCD_Clear(RED);
+        printf("GREEN \r\n");
+        LCD_Clear(GREEN);
+        printf("BLUE \r\n");
+        LCD_Clear(BLUE);
+        printf("BLACK \r\n");
+        LCD_Clear(BLACK);
     }
 #endif
     aos_loop_run();
