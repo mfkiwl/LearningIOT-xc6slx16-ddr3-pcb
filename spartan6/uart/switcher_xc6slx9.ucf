@@ -1,5 +1,0 @@
-# mcu侧引脚 
-NET "mcu[63]" LOC = P143 | IOSTANDARD = LVTTL;
-NET "mcu[62]" LOC = P142 | IOSTANDARD = LVTTL;
-# 时钟输入信号
-NET "clk_main" LOC = P70;
