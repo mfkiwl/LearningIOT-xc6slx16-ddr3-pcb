@@ -25,7 +25,7 @@ begin
         begin
             if rising_edge(clk) then
                 led0 <= '1';
-                led1 <=  '0';
+                led1 <= '0';
             end if;
             if (clk = '0') then
                 led0 <= '0';
