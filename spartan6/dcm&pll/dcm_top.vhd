@@ -29,15 +29,15 @@ begin
        CLKFBOUT_MULT => 4,                   -- Multiply value for all CLKOUT clock outputs (1-64)
        CLKFBOUT_PHASE => 0.0,                -- Phase offset in degrees of the clock feedback output
                                              -- (0.0-360.0).
-       CLKIN_PERIOD => 10.0,                  -- Input clock period in ns to ps resolution (i.e. 33.333 is 30
+       CLKIN_PERIOD => 5.0,                  -- Input clock period in ns to ps resolution (i.e. 33.333 is 30
                                              -- MHz).
        -- CLKOUT0_DIVIDE - CLKOUT5_DIVIDE: Divide amount for CLKOUT# clock output (1-128)
-       CLKOUT0_DIVIDE => 4,
-       CLKOUT1_DIVIDE => 4,
-       CLKOUT2_DIVIDE => 4,
-       CLKOUT3_DIVIDE => 4,
-       CLKOUT4_DIVIDE => 4,
-       CLKOUT5_DIVIDE => 4,
+       CLKOUT0_DIVIDE => 8,
+       CLKOUT1_DIVIDE => 8,
+       CLKOUT2_DIVIDE => 8,
+       CLKOUT3_DIVIDE => 8,
+       CLKOUT4_DIVIDE => 8,
+       CLKOUT5_DIVIDE => 8,
        -- CLKOUT0_DUTY_CYCLE - CLKOUT5_DUTY_CYCLE: Duty cycle for CLKOUT# clock output (0.01-0.99).
        CLKOUT0_DUTY_CYCLE => 0.1,
        CLKOUT1_DUTY_CYCLE => 0.2,
