@@ -3,12 +3,29 @@
 >xtclsh
 #### project
 新建项目
-project new name.xise
+
+    project new name
+
 设置项目属性
-project set family|device|package|speed
+```
+project set family spartan6         ;# 设置family属性
+project set device xc6slx9
+project set package tqg144
+project set speed -2
+project set top dcm
+```
 添加文件至项目
-xfile add
+```
+xfile add ../*.vhd ../*ucf
+```
 #### process
-process run "Implement Design"
-process run "Generate Programming File"
+综合设计
+
+    process run "Implement Design"
+
+生成bit文件
+    
+    process run "Generate Programming File"
+
+
 #### download
