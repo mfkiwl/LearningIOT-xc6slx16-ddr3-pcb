@@ -7,12 +7,11 @@ entity dcm is
     Port (  mcu,ext     :inout       std_logic_vector(5 downto 0);
             clk_in      :in          std_logic;
             led0        :out         std_logic;
-            led1        :out         std_logic);
+            led1        :inout       std_logic);
 end dcm;
 
 architecture Behavioral of dcm is
-    signal div_64_1 : std_logic_vector(5 downto 0) := "000000";
-    signal div_64 : std_logic_vector(5 downto 0) := "000000";
+    signal div_65535 : integer range 0 to 65535 := 0;
     signal clk_33 : std_logic;
     signal clk_80 : std_logic;
     signal clk_200 : std_logic;
@@ -36,12 +35,11 @@ begin
     process (clk_80)
         begin
             if rising_edge(clk_80) then
-                div_64_1 <= div_64_1 + 1;
-                if(div_64_1 = "000000") then
-                    div_64 <= div_64 +1;
+                div_65535 <= div_65535 + 1;
+                if (div_65535 = 65535) then
+                    div_65535 <= 0;
+                    led1 <= not led1;
                 end if;
             end if;
     end process;
-    led1 <= div_64(5);           --3Hz
-    ext <= div_64;
 end Behavioral;
