@@ -6,7 +6,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity dcm is
     Port (  mcu,ext     :inout       std_logic_vector(5 downto 0);
             clk_in      :in          std_logic;
-            led0        :inout         std_logic;
+            led0        :inout       std_logic;
             led1        :inout       std_logic);
 end dcm;
 
@@ -65,6 +65,7 @@ begin
                     led1 <= not led1;
                 end if;
             end if;
+            ext(0) <= clk_3;
     end process;
 
     L0: process (clk_133)

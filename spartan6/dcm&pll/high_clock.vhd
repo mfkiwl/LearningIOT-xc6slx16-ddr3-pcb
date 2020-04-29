@@ -33,17 +33,20 @@ begin
         CLKIN_PERIOD => 20.0,                -- Input clock period in ns to ps resolution (i.e. 33.333 is 30
                                             -- MHz).
         -- CLKOUT0_DIVIDE - CLKOUT5_DIVIDE: Divide amount for CLKOUT# clock output (1-128)
-        CLKOUT0_DIVIDE => 4,
-        CLKOUT1_DIVIDE => 24,
-        CLKOUT2_DIVIDE => 12,
+        CLKOUT0_DIVIDE => 5,
+        CLKOUT1_DIVIDE => 4,
+        CLKOUT2_DIVIDE => 2,
+        CLKOUT3_DIVIDE => 1,
         -- CLKOUT0_DUTY_CYCLE - CLKOUT5_DUTY_CYCLE: Duty cycle for CLKOUT# clock output (0.01-0.99).
         CLKOUT0_DUTY_CYCLE => 0.5,
         CLKOUT1_DUTY_CYCLE => 0.5,
         CLKOUT2_DUTY_CYCLE => 0.5,
+        CLKOUT3_DUTY_CYCLE => 0.5,
         -- CLKOUT0_PHASE - CLKOUT5_PHASE: Output phase relationship for CLKOUT# clock output (-360.0-360.0).
         CLKOUT0_PHASE => 0.0,
         CLKOUT1_PHASE => 0.0,
         CLKOUT2_PHASE => 0.0,
+        CLKOUT3_PHASE => 0.0,
         CLK_FEEDBACK => "CLKFBOUT",           -- Clock source to drive CLKFBIN ("CLKFBOUT" or "CLKOUT0")
         COMPENSATION => "SYSTEM_SYNCHRONOUS", -- "SYSTEM_SYNCHRONOUS", "SOURCE_SYNCHRONOUS", "EXTERNAL" 
         DIVCLK_DIVIDE => 1,                   -- Division value for all output clocks (1-52)
