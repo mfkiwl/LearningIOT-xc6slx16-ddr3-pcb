@@ -11,30 +11,30 @@ entity dcm is
 end dcm;
 
 architecture Behavioral of dcm is
-    signal div_65535 : integer range 0 to 65535 := 0;
-    signal clk_33 : std_logic;
-    signal clk_80 : std_logic;
-    signal clk_200 : std_logic;
+    signal div_65535    : integer range 0 to 65535 := 0;
+    signal clk_3        : std_logic;
+    signal clk_16       : std_logic;
+    signal clk_33       : std_logic;
 
-    component clock
+    component low_clock
         Port (  clk_in          :in     std_logic;
+                clk_out_3       :out    std_logic;
+                clk_out_16      :out    std_logic;
                 clk_out_33      :out    std_logic;
-                clk_out_80      :out    std_logic;
-                clk_out_200     :out    std_logic;
                 lock            :out    std_logic);
     end component;
 
 begin
-    CLOCK_PLL : clock
+    CLOCK_PLL : low_clock
     port map (  clk_in => clk_in,
+                clk_out_3 => clk_3,
+                clk_out_16 => clk_16,
                 clk_out_33 => clk_33,
-                clk_out_80 => clk_80,
-                clk_out_200 => clk_200,
                 lock => led0);
 
-    process (clk_80)
+    process (clk_3)
         begin
-            if rising_edge(clk_80) then
+            if rising_edge(clk_3) then
                 div_65535 <= div_65535 + 1;
                 if (div_65535 = 65535) then
                     div_65535 <= 0;
