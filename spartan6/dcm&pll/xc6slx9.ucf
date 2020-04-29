@@ -4,7 +4,7 @@ NET "led0" LOC = P142 | IOSTANDARD = LVTTL;
 # 按钮
 #NET "clr" LOC = P26;
 # 时钟输入信号
-NET "clk_in" LOC = P55 | CLOCK_DEDICATED_ROUTE = FALSE;
+NET "clk_in" LOC = P55;
 # ext引脚定义
 NET ext(0) LOC = P30 | IOSTANDARD = LVTTL;
 NET ext(1) LOC = P33 | IOSTANDARD = LVTTL;

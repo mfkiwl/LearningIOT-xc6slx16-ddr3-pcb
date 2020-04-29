@@ -13,16 +13,17 @@ entity low_clock is
 end low_clock;
 
 architecture Behavioral of low_clock is
-    signal      f:              std_logic;
-    signal      clk_global:     std_logic;
+    signal      f              : std_logic;
+    signal      clk_global     : std_logic;
 begin
+
     IBUFG_inst : IBUFG
     generic map (
-       IBUF_LOW_PWR => TRUE, -- Low power (TRUE) vs. performance (FALSE) setting for referenced I/O standards
+       IBUF_LOW_PWR => TRUE,    -- Low power (TRUE) vs. performance (FALSE) setting for referenced I/O standards
        IOSTANDARD => "DEFAULT")
     port map (
-       O => clk_global, -- Clock buffer output
-       I => clk_in  -- Clock buffer input (connect directly to top-level port)
+       O => clk_global,         -- Clock buffer output
+       I => clk_in              -- Clock buffer input (connect directly to top-level port)
     );
 
     PLL_BASE_inst : PLL_BASE
@@ -52,15 +53,15 @@ begin
         RESET_ON_LOSS_OF_LOCK => FALSE        -- Must be set to FALSE
     )
     port map (
-        CLKFBOUT => f, -- 1-bit output: PLL_BASE feedback output
+        CLKFBOUT => f,                        -- 1-bit output: PLL_BASE feedback output
         -- CLKOUT0 - CLKOUT5: 1-bit (each) output: Clock outputs
         CLKOUT0 => clk_out_3,
         CLKOUT1 => clk_out_16,
         CLKOUT2 => clk_out_33,
-        LOCKED => lock,     -- 1-bit output: PLL_BASE lock status output
-        CLKFBIN => f,   -- 1-bit input: Feedback clock input
-        CLKIN => clk_global,       -- 1-bit input: Clock input
-        RST => '0'            -- 1-bit input: Reset input
+        LOCKED => lock,                       -- 1-bit output: PLL_BASE lock status output
+        CLKFBIN => f,                         -- 1-bit input: Feedback clock input
+        CLKIN => clk_global,                  -- 1-bit input: Clock input
+        RST => '0'                            -- 1-bit input: Reset input
     );
 
  end Behavioral;
