@@ -3,23 +3,23 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
-entity dcm is
+entity switcher is
     Port (  mcu,ext     :inout       std_logic_vector(5 downto 0);
             clk_in      :in          std_logic;
             led0        :inout       std_logic;
             led1        :inout       std_logic);
-end dcm;
+end switcher;
 
-architecture Behavioral of dcm is
+architecture Behavioral of switcher is
     signal div_1            : std_logic_vector(7 downto 0) := (others => '0');
     signal div_2            : std_logic_vector(7 downto 0) := (others => '0');
     signal clk_3            : std_logic;
     signal clk_16           : std_logic;
     signal clk_33           : std_logic;
-    signal clk_133          : std_logic;
+    -- signal clk_133          : std_logic;
     signal clk_166          : std_logic;
-    signal clk_333          : std_logic;
-    signal clk_666          : std_logic;
+    -- signal clk_333          : std_logic;
+    -- signal clk_666          : std_logic;
     signal low_clk_lock     : std_logic;
     signal high_clk_lock    : std_logic;
 
@@ -33,10 +33,10 @@ architecture Behavioral of dcm is
 
     component high_clock
         Port (  clk_in          :in     std_logic;
-                clk_out_133     :out    std_logic;
+                -- clk_out_133     :out    std_logic;
                 clk_out_166     :out    std_logic;
-                clk_out_333     :out    std_logic;
-                clk_out_666     :out    std_logic;
+                -- clk_out_333     :out    std_logic;
+                -- clk_out_666     :out    std_logic;
                 lock            :out    std_logic);
     end component;
 
@@ -50,10 +50,10 @@ begin
                 
     HIGH_CLOCK_PLL : high_clock
     port map (  clk_in => clk_33,
-                clk_out_133 => clk_133,
+                -- clk_out_133 => clk_133,
                 clk_out_166 => clk_166,
-                clk_out_333 => clk_333,
-                clk_out_666 => clk_666,
+                -- clk_out_333 => clk_333,
+                -- clk_out_666 => clk_666,
                 lock => high_clk_lock);
 
     L1: process (clk_3)
@@ -66,17 +66,6 @@ begin
                 end if;
             end if;
             ext(0) <= clk_3;
-    end process;
-
-    L0: process (clk_666)
-    begin
-        if rising_edge(clk_666) then
-            div_2 <= div_2 + 1;
-            if (div_2 = 255) then
-                div_2 <= (others => '0');
-                led0 <= not led0;
-            end if;
-        end if;
     end process;
 
 end Behavioral;
