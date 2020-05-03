@@ -14,7 +14,7 @@ entity high_clock is
 end high_clock;
 
 architecture Behavioral of high_clock is
-    signal      f              : std_logic;
+    signal      f           : std_logic;
     signal      clk         : std_logic;
 begin
 
