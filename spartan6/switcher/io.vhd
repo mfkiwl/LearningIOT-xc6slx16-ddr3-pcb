@@ -13,8 +13,12 @@ end io;
 
 architecture Behavioral of io is
 
-    signal div_reg              :std_logic_vector(8 downto 0);
-    signal div_count            :std_logic_vector(8 downto 0);
+    constant        addr_denominator ：         std_logic_vector(3 downto 0)   := B"0010";
+    constant        addr_denominator_offset ：  std_logic_vector(3 downto 0)   := B"0010";
+    constant        addr_config ：              std_logic_vector(3 downto 0)   := B"0011";
+
+    signal          div_reg              :std_logic_vector(8 downto 0);
+    signal          div_count            :std_logic_vector(8 downto 0);
 
 begin
 
