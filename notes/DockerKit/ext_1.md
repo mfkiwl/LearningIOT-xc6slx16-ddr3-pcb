@@ -1,19 +1,24 @@
 
 #### 扩展板定义
+TOP层测试点：3.3V电压、
+
 IO表格
 | Description | Number |
 | ---         | ---    |
-| GPIO        | 32     |
+| GPIO        | 24     |
 | CLK         | 2      |
+| Vref        | 1      |
 | 3.3V        | 2x2    |
 | GND         | 1x12   |
-| SPI         | 1x3    |
+| Flash_SPI   | 1x3    |
 | DEBUG       | 1x2    |
 | ADC         | 2      |
 | DAC         | 1      |
 | JTAG(SWD)   | 1x4    |
 | USB         | 1x2    |
 | CONF        | 3      |
+| LED_RGB     | 1x3    |
+| Reserved    | 1x4    |
 
 详细IO定义
 | Top   | Description | Bottom | Description |
@@ -29,12 +34,12 @@ IO表格
 | 53    | SPI1_SCK    | 52     | GND         |
 | 51    | VCC_3.3     | 50     | DAC1        |
 | 49    | CONF_BOOT1  | 48     | GND         |
-| 47    | GND         | 46     | USB_D-      |
-| 45    | EXT1_45     | 44     | USB_D+      |
-| 43    | EXT1_43     | 42     | GND         |
-| 41    | EXT1_41     | 40     | SWCLK       |
-| 39    | EXT1_39     | 38     | GND         |
-| 37    | EXT1_37     | 36     | SWDIO       |
+| 47    | RESERVED1   | 46     | USB_D-      |
+| 45    | RESERVED2   | 44     | USB_D+      |
+| 43    | RESERVED3   | 42     | GND         |
+| 41    | RESERVED4   | 40     | SWCLK       |
+| 39    | Vref        | 38     | GND         |
+| 37    | GND         | 36     | SWDIO       |
 | 35    | EXT1_35     | 34     | GND         |
 | 33    | EXT1_33     | 32     | JTAG_TDO    |
 | 31    | EXT1_31     | 30     | GND         |
@@ -50,6 +55,6 @@ IO表格
 | 11    | EXT1_11     | 10     | EXT1_10     |
 | 9     | EXT1_9      | 8      | EXT1_8      |
 | 7     | EXT1_7      | 6      | EXT1_6      |
-| 5     | EXT1_5      | 4      | EXT1_4      |
-| 3     | EXT1_3      | 2      | EXT1_2      |
-| 1     | EXT1_1      | 
+| 5     | LED_B       | 4      | EXT1_4      |
+| 3     | LED_G       | 2      | EXT1_2      |
+| 1     | LED_R       | 
