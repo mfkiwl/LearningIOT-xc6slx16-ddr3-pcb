@@ -1,6 +1,21 @@
 
 #### 扩展板定义
+IO表格
+| Description | Number |
+| ---         | ---    |
+| GPIO        | 32     |
+| CLK         | 2      |
+| 3.3V        | 2x2    |
+| GND         | 1x12   |
+| SPI         | 1x3    |
+| DEBUG       | 1x2    |
+| ADC         | 2      |
+| DAC         | 1      |
+| JTAG(SWD)   | 1x4    |
+| USB         | 1x2    |
+| CONF        | 3      |
 
+详细IO定义
 | Top   | Description | Bottom | Description |
 | ---   | ---         | ---    | ---         |
 | 75    | Uart1_rx    | 74     | CLK_IN1     |
@@ -13,21 +28,21 @@
 | 55    | VCC_3.3     | 54     | ADC2        |
 | 53    | SPI1_SCK    | 52     | GND         |
 | 51    | VCC_3.3     | 50     | DAC1        |
-| 49    | EXT1_49     | 48     | GND         |
-| 47    | EXT1_47     | 46     | USB_D-      |
+| 49    | CONF_BOOT1  | 48     | GND         |
+| 47    | GND         | 46     | USB_D-      |
 | 45    | EXT1_45     | 44     | USB_D+      |
 | 43    | EXT1_43     | 42     | GND         |
-| 41    | EXT1_41     | 40     | EXT1_40     |
-| 39    | EXT1_39     | 38     | EXT1_38     |
-| 37    | EXT1_37     | 36     | EXT1_36     |
-| 35    | EXT1_35     | 34     | EXT1_34     |
-| 33    | EXT1_33     | 32     | EXT1_32     |
-| 31    | EXT1_31     | 30     | EXT1_30     |
-| 29    | EXT1_29     | 28     | EXT1_28     |
-| 27    | EXT1_27     | 26     | EXT1_26     |
-| 25    | EXT1_25     | 24     | EXT1_24     |
-| 23    | EXT1_23     | 22     | EXT1_22     |
-| 21    | EXT1_21     | 20     | EXT1_20     |
+| 41    | EXT1_41     | 40     | SWCLK       |
+| 39    | EXT1_39     | 38     | GND         |
+| 37    | EXT1_37     | 36     | SWDIO       |
+| 35    | EXT1_35     | 34     | GND         |
+| 33    | EXT1_33     | 32     | JTAG_TDO    |
+| 31    | EXT1_31     | 30     | GND         |
+| 29    | EXT1_29     | 28     | JTAG_TDI    |
+| 27    | EXT1_27     | 26     | GND         |
+| 25    | EXT1_25     | 24     | CONF_NRST   |
+| 23    | EXT1_23     | 22     | CONF_BOOT0  |
+| 21    | EXT1_21     | 20     | GND         |
 | 19    | EXT1_19     | 18     | EXT1_18     |
 | 17    | EXT1_17     | 16     | EXT1_16     |
 | 15    | EXT1_15     | 14     | EXT1_14     |
