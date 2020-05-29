@@ -1,6 +1,8 @@
+### MCU扩展板
+MCU专用扩展板插槽
 
 #### 扩展板定义
-TOP层测试点：3.3V电压、
+TOP层测试点：3.3V电压，Vref、BOOT0，NRST，SWCLK，SWDIO，GND
 
 IO表格
 | Description | Number |
@@ -8,8 +10,8 @@ IO表格
 | GPIO        | 24     |
 | CLK         | 2      |
 | Vref        | 1      |
-| 3.3V        | 2x2    |
-| GND         | 1x12   |
+| 3.3V        | 4x2    |
+| GND         | 1x8    |
 | Flash_SPI   | 1x3    |
 | DEBUG       | 1x2    |
 | ADC         | 2      |
@@ -29,14 +31,14 @@ IO表格
 | 69    | SPI1_MISO   | 68     | GND         |
 | 67    | VCC_3.3     | -      | -           |
 | -     | -           | 58     | ADC1        |
-| 57    | SPI1_MOSI   | 56     | GND         |
+| 57    | SPI1_MOSI   | 56     | VCC_3.3V    |
 | 55    | VCC_3.3     | 54     | ADC2        |
-| 53    | SPI1_SCK    | 52     | GND         |
+| 53    | SPI1_SCK    | 52     | VCC_3.3V    |
 | 51    | VCC_3.3     | 50     | DAC1        |
-| 49    | CONF_BOOT1  | 48     | GND         |
+| 49    | CONF_BOOT1  | 48     | VCC_3.3V    |
 | 47    | RESERVED1   | 46     | USB_D-      |
 | 45    | RESERVED2   | 44     | USB_D+      |
-| 43    | RESERVED3   | 42     | GND         |
+| 43    | RESERVED3   | 42     | VCC_3.3V    |
 | 41    | RESERVED4   | 40     | SWCLK       |
 | 39    | Vref        | 38     | GND         |
 | 37    | GND         | 36     | SWDIO       |
