@@ -1,5 +1,5 @@
-### MCU扩展板
-MCU专用插槽
+### 外设扩展板
+外设专用插槽
 
 #### 扩展板定义
 TOP层测试点：3.3V电压，Vref、BOOT0，NRST，SWCLK，SWDIO，GND
@@ -35,21 +35,21 @@ IO表格
 | 55    | VCC_3.3     | 54     | ADC2        |
 | 53    | SPI1_SCK    | 52     | VCC_3.3V    |
 | 51    | VCC_3.3     | 50     | DAC1        |
-| 49    | CONF_BOOT1  | 48     | VCC_3.3V    |
-| 47    | RESERVED1   | 46     | USB_D-      |
-| 45    | RESERVED2   | 44     | USB_D+      |
-| 43    | RESERVED3   | 42     | VCC_3.3V    |
-| 41    | RESERVED4   | 40     | SWCLK       |
-| 39    | Vref        | 38     | GND         |
-| 37    | GND         | 36     | SWDIO       |
-| 35    | EXT1_35     | 34     | GND         |
-| 33    | EXT1_33     | 32     | JTAG_TDO    |
-| 31    | EXT1_31     | 30     | GND         |
-| 29    | EXT1_29     | 28     | JTAG_TDI    |
-| 27    | EXT1_27     | 26     | GND         |
-| 25    | EXT1_25     | 24     | CONF_NRST   |
-| 23    | EXT1_23     | 22     | CONF_BOOT0  |
-| 21    | EXT1_21     | 20     | GND         |
+| 49    | LVDS0+      | 48     | VCC_3.3V    |
+| 47    | LVDS0-      | 46     | USB_D-      |
+| 45    | GND         | 44     | USB_D+      |
+| 43    | LVDS1+      | 42     | VCC_3.3V    |
+| 41    | LVDS1-      | 40     | SWCLK       |
+| 39    | GND         | 38     | GND         |
+| 37    | LVDS2+      | 36     | SWDIO       |
+| 35    | LVDS2-      | 34     | GND         |
+| 33    | GND         | 32     | JTAG_TDO    |
+| 31    | LVDS3+      | 30     | GND         |
+| 29    | LVDS3-      | 28     | JTAG_TDI    |
+| 27    | GND         | 26     | GND         |
+| 25    | LVDS4+      | 24     | CONF_NRST   |
+| 23    | LVDS4-      | 22     | CONF_BOOT0  |
+| 21    | GND         | 20     | GND         |
 | 19    | EXT1_19     | 18     | EXT1_18     |
 | 17    | EXT1_17     | 16     | EXT1_16     |
 | 15    | EXT1_15     | 14     | EXT1_14     |
