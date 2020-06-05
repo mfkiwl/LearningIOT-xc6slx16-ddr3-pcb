@@ -7,11 +7,13 @@ TOP层测试点：3.3V电压，Vref、BOOT0，NRST，SWCLK，SWDIO，GND
 IO表格
 | Description | Number |
 | ---         | ---    |
-| GPIO        | 24     |
+| GPIO        | 16     |
+| CAN         | 2x1    |
+| I2C         | 2x2    |
 | CLK         | 2      |
 | Vref        | 1      |
 | 3.3V        | 4x2    |
-| GND         | 1x8    |
+| GND         | 1x10   |
 | Flash_SPI   | 1x3    |
 | DEBUG       | 1x2    |
 | ADC         | 2      |
@@ -42,21 +44,21 @@ IO表格
 | 41    | RESERVED4   | 40     | SWCLK       |
 | 39    | Vref        | 38     | GND         |
 | 37    | GND         | 36     | SWDIO       |
-| 35    | EXT1_35     | 34     | GND         |
-| 33    | EXT1_33     | 32     | JTAG_TDO    |
-| 31    | EXT1_31     | 30     | GND         |
-| 29    | EXT1_29     | 28     | JTAG_TDI    |
-| 27    | EXT1_27     | 26     | GND         |
-| 25    | EXT1_25     | 24     | CONF_NRST   |
-| 23    | EXT1_23     | 22     | CONF_BOOT0  |
-| 21    | EXT1_21     | 20     | GND         |
-| 19    | EXT1_19     | 18     | EXT1_18     |
-| 17    | EXT1_17     | 16     | EXT1_16     |
-| 15    | EXT1_15     | 14     | EXT1_14     |
-| 13    | EXT1_13     | 12     | EXT1_12     |
-| 11    | EXT1_11     | 10     | EXT1_10     |
-| 9     | EXT1_9      | 8      | EXT1_8      |
-| 7     | EXT1_7      | 6      | EXT1_6      |
-| 5     | LED_B       | 4      | EXT1_4      |
-| 3     | LED_G       | 2      | EXT1_2      |
+| 35    | I2C1_SCL    | 34     | GND         |
+| 33    | I2C1_SDA    | 32     | JTAG_TDO    |
+| 31    | I2C2_SCL    | 30     | GND         |
+| 29    | I2C2_SDA    | 28     | JTAG_TDI    |
+| 27    | GND         | 26     | GND         |
+| 25    | CAN1+       | 24     | CONF_NRST   |
+| 23    | CAN1-       | 22     | CONF_BOOT0  |
+| 21    | GND         | 20     | GND         |
+| 19    | EXT1_16     | 18     | EXT1_15     |
+| 17    | EXT1_14     | 16     | EXT1_13     |
+| 15    | EXT1_12     | 14     | EXT1_11     |
+| 13    | EXT1_10     | 12     | EXT1_9      |
+| 11    | EXT1_8      | 10     | EXT1_7      |
+| 9     | EXT1_6      | 8      | EXT1_5      |
+| 7     | EXT1_4      | 6      | EXT1_3      |
+| 5     | LED_B       | 4      | EXT1_2      |
+| 3     | LED_G       | 2      | EXT1_1      |
 | 1     | LED_R       | 
