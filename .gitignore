@@ -55,3 +55,6 @@ stm*/build/*
 AliOS-Things/..config.tmp
 AliOS-Things/build/kconfig/Win32/
 spartan6/*/build
+*.l#*
+*.b#*
+*.s#*
